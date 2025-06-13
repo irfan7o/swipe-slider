@@ -20,16 +20,14 @@ export const CardItem: FC<CardItemProps> = ({ data, position }) => {
   const getTransformStyles = () => {
     switch (position) {
       case 'center':
-        return 'translateX(0%) scale(1)';
+        return 'translateX(0%) scale(1) rotateZ(0deg)';
       case 'left':
-        return 'translateX(-60%) scale(0.8)';
+        return 'translateX(-60%) scale(0.8) rotateZ(-5deg)';
       case 'right':
-        return 'translateX(60%) scale(0.8)';
+        return 'translateX(60%) scale(0.8) rotateZ(5deg)';
       case 'hidden':
       default:
-        // This case is not actively used for a 3-card setup but kept for robustness
-        // It might be better to position it far left or right based on current index if used.
-        return 'translateX(0%) scale(0.5)'; 
+        return 'translateX(0%) scale(0.5) rotateZ(0deg)'; 
     }
   };
 
@@ -79,7 +77,7 @@ export const CardItem: FC<CardItemProps> = ({ data, position }) => {
             layout="fill"
             objectFit="cover"
             data-ai-hint={data.hint}
-            priority={position === 'center'} // Prioritize loading the center image
+            priority={position === 'center'}
           />
         </div>
         <CardHeader>

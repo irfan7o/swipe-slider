@@ -1,3 +1,9 @@
+import { SwipeableCardUI } from '@/components/swipeable-card-ui';
+
 export default function Home() {
-  return <></>;
+  return (
+    <main>
+      <SwipeableCardUI />
+    </main>
+  );
 }
